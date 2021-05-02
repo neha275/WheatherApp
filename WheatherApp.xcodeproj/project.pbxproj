@@ -7,19 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE53B5DC263F43470008BC73 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE53B5DB263F43470008BC73 /* MainViewController.swift */; };
 		BEF2093E263F3E3300F1E757 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF2093D263F3E3300F1E757 /* AppDelegate.swift */; };
 		BEF20940263F3E3300F1E757 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF2093F263F3E3300F1E757 /* SceneDelegate.swift */; };
-		BEF20942263F3E3300F1E757 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF20941263F3E3300F1E757 /* ViewController.swift */; };
 		BEF20945263F3E3300F1E757 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEF20943263F3E3300F1E757 /* Main.storyboard */; };
 		BEF20947263F3E3E00F1E757 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEF20946263F3E3E00F1E757 /* Assets.xcassets */; };
 		BEF2094A263F3E3E00F1E757 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEF20948263F3E3E00F1E757 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BE53B5DB263F43470008BC73 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		BEF2093A263F3E3300F1E757 /* WheatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WheatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEF2093D263F3E3300F1E757 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEF2093F263F3E3300F1E757 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BEF20941263F3E3300F1E757 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BEF20944263F3E3300F1E757 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BEF20946263F3E3E00F1E757 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BEF20949263F3E3E00F1E757 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -37,6 +37,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE53B5D7263F42B80008BC73 /* Bundle */ = {
+			isa = PBXGroup;
+			children = (
+				BEF20946263F3E3E00F1E757 /* Assets.xcassets */,
+				BEF2094B263F3E3E00F1E757 /* Info.plist */,
+			);
+			name = Bundle;
+			sourceTree = "<group>";
+		};
+		BE53B5D9263F42CD0008BC73 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				BE53B5DA263F42E40008BC73 /* ViewController */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		BE53B5DA263F42E40008BC73 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BE53B5DB263F43470008BC73 /* MainViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		BE53B5DF263F44DD0008BC73 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				BEF20948263F3E3E00F1E757 /* LaunchScreen.storyboard */,
+				BEF20943263F3E3300F1E757 /* Main.storyboard */,
+			);
+			name = Storyboard;
+			sourceTree = "<group>";
+		};
 		BEF20931263F3E3300F1E757 = {
 			isa = PBXGroup;
 			children = (
@@ -56,15 +90,21 @@
 		BEF2093C263F3E3300F1E757 /* WheatherApp */ = {
 			isa = PBXGroup;
 			children = (
-				BEF2093D263F3E3300F1E757 /* AppDelegate.swift */,
-				BEF2093F263F3E3300F1E757 /* SceneDelegate.swift */,
-				BEF20941263F3E3300F1E757 /* ViewController.swift */,
-				BEF20943263F3E3300F1E757 /* Main.storyboard */,
-				BEF20946263F3E3E00F1E757 /* Assets.xcassets */,
-				BEF20948263F3E3E00F1E757 /* LaunchScreen.storyboard */,
-				BEF2094B263F3E3E00F1E757 /* Info.plist */,
+				BE53B5DF263F44DD0008BC73 /* Storyboard */,
+				BE53B5D9263F42CD0008BC73 /* Main */,
+				BE53B5D7263F42B80008BC73 /* Bundle */,
+				BEF20953263F3E9300F1E757 /* Delegates */,
 			);
 			path = WheatherApp;
+			sourceTree = "<group>";
+		};
+		BEF20953263F3E9300F1E757 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				BEF2093D263F3E3300F1E757 /* AppDelegate.swift */,
+				BEF2093F263F3E3300F1E757 /* SceneDelegate.swift */,
+			);
+			name = Delegates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +177,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BEF20942263F3E3300F1E757 /* ViewController.swift in Sources */,
+				BE53B5DC263F43470008BC73 /* MainViewController.swift in Sources */,
 				BEF2093E263F3E3300F1E757 /* AppDelegate.swift in Sources */,
 				BEF20940263F3E3300F1E757 /* SceneDelegate.swift in Sources */,
 			);
