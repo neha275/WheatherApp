@@ -13,6 +13,7 @@
 		BE4AC58026429AB600850E58 /* HourlyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE4AC57E26429AB600850E58 /* HourlyCollectionViewCell.xib */; };
 		BE4AC58426429C9100850E58 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4AC58326429C9100850E58 /* Weather.swift */; };
 		BE53B5DC263F43470008BC73 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE53B5DB263F43470008BC73 /* MainViewController.swift */; };
+		BE68AC75264333B800B09101 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE68AC74264333B800B09101 /* NetworkManager.swift */; };
 		BEF2093E263F3E3300F1E757 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF2093D263F3E3300F1E757 /* AppDelegate.swift */; };
 		BEF20940263F3E3300F1E757 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF2093F263F3E3300F1E757 /* SceneDelegate.swift */; };
 		BEF20945263F3E3300F1E757 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEF20943263F3E3300F1E757 /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 		BE4AC57E26429AB600850E58 /* HourlyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HourlyCollectionViewCell.xib; sourceTree = "<group>"; };
 		BE4AC58326429C9100850E58 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		BE53B5DB263F43470008BC73 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		BE68AC74264333B800B09101 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		BEF2093A263F3E3300F1E757 /* WheatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WheatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEF2093D263F3E3300F1E757 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEF2093F263F3E3300F1E757 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +120,14 @@
 			name = Storyboard;
 			sourceTree = "<group>";
 		};
+		BE68AC732643338700B09101 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				BE68AC74264333B800B09101 /* NetworkManager.swift */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
 		BEF20931263F3E3300F1E757 = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +147,7 @@
 		BEF2093C263F3E3300F1E757 /* WheatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				BE68AC732643338700B09101 /* Networking */,
 				BE53B5DF263F44DD0008BC73 /* Storyboard */,
 				BE53B5D9263F42CD0008BC73 /* Main */,
 				BE53B5D7263F42B80008BC73 /* Bundle */,
@@ -229,6 +240,7 @@
 				BE4AC57726429A3700850E58 /* WeatherTableViewCell.swift in Sources */,
 				BE53B5DC263F43470008BC73 /* MainViewController.swift in Sources */,
 				BEF2093E263F3E3300F1E757 /* AppDelegate.swift in Sources */,
+				BE68AC75264333B800B09101 /* NetworkManager.swift in Sources */,
 				BEF20940263F3E3300F1E757 /* SceneDelegate.swift in Sources */,
 				BE4AC58426429C9100850E58 /* Weather.swift in Sources */,
 				BE4AC57F26429AB600850E58 /* HourlyCollectionViewCell.swift in Sources */,
