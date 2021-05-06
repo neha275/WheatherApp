@@ -14,8 +14,8 @@
 		BE4AC58426429C9100850E58 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4AC58326429C9100850E58 /* Weather.swift */; };
 		BE53B5DC263F43470008BC73 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE53B5DB263F43470008BC73 /* MainViewController.swift */; };
 		BE68AC75264333B800B09101 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE68AC74264333B800B09101 /* NetworkManager.swift */; };
-		BE94FCDD26446E1F00988CCF /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE94FCDC26446E1F00988CCF /* Api.swift */; };
-		BE94FCE326446E8700988CCF /* Api+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE94FCE226446E8700988CCF /* Api+Extension.swift */; };
+		BE94FCDD26446E1F00988CCF /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE94FCDC26446E1F00988CCF /* API.swift */; };
+		BE94FCE326446E8700988CCF /* API+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE94FCE226446E8700988CCF /* API+Extension.swift */; };
 		BEF2093E263F3E3300F1E757 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF2093D263F3E3300F1E757 /* AppDelegate.swift */; };
 		BEF20940263F3E3300F1E757 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF2093F263F3E3300F1E757 /* SceneDelegate.swift */; };
 		BEF20945263F3E3300F1E757 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEF20943263F3E3300F1E757 /* Main.storyboard */; };
@@ -31,8 +31,8 @@
 		BE4AC58326429C9100850E58 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		BE53B5DB263F43470008BC73 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		BE68AC74264333B800B09101 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		BE94FCDC26446E1F00988CCF /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
-		BE94FCE226446E8700988CCF /* Api+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Api+Extension.swift"; sourceTree = "<group>"; };
+		BE94FCDC26446E1F00988CCF /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		BE94FCE226446E8700988CCF /* API+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+Extension.swift"; sourceTree = "<group>"; };
 		BEF2093A263F3E3300F1E757 /* WheatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WheatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEF2093D263F3E3300F1E757 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEF2093F263F3E3300F1E757 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -128,8 +128,8 @@
 			isa = PBXGroup;
 			children = (
 				BE68AC74264333B800B09101 /* NetworkManager.swift */,
-				BE94FCDC26446E1F00988CCF /* Api.swift */,
-				BE94FCE226446E8700988CCF /* Api+Extension.swift */,
+				BE94FCDC26446E1F00988CCF /* API.swift */,
+				BE94FCE226446E8700988CCF /* API+Extension.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -247,10 +247,10 @@
 				BE53B5DC263F43470008BC73 /* MainViewController.swift in Sources */,
 				BEF2093E263F3E3300F1E757 /* AppDelegate.swift in Sources */,
 				BE68AC75264333B800B09101 /* NetworkManager.swift in Sources */,
-				BE94FCE326446E8700988CCF /* Api+Extension.swift in Sources */,
+				BE94FCE326446E8700988CCF /* API+Extension.swift in Sources */,
 				BEF20940263F3E3300F1E757 /* SceneDelegate.swift in Sources */,
 				BE4AC58426429C9100850E58 /* Weather.swift in Sources */,
-				BE94FCDD26446E1F00988CCF /* Api.swift in Sources */,
+				BE94FCDD26446E1F00988CCF /* API.swift in Sources */,
 				BE4AC57F26429AB600850E58 /* HourlyCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
