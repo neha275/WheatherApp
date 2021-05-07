@@ -12,7 +12,7 @@ class MainViewController: UIViewController {
 
     @IBOutlet weak var table:UITableView!
     
-    var modals = [Wheather]()
+    var modals = [WeatherResponse]()
     let locationManager = CLLocationManager()
     var currentLoaction:CLLocation?
     
