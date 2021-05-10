@@ -16,8 +16,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <searchBar contentMode="redraw" placeholder="Enter Location" translatesAutoresizingMaskIntoConstraints="NO" id="EIN-rO-pkD">
+                                <rect key="frame" x="0.0" y="44" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="yes" spellCheckingType="yes"/>
+                                <connections>
+                                    <outlet property="delegate" destination="ptf-wc-KIK" id="FFN-lw-Ue3"/>
+                                </connections>
+                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4US-6G-6LZ">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="100" width="414" height="762"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="ptf-wc-KIK" id="2ko-sk-tFw"/>
@@ -28,19 +35,23 @@
                         <viewLayoutGuide key="safeArea" id="hiR-JL-RR9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="4US-6G-6LZ" firstAttribute="top" secondItem="hiR-JL-RR9" secondAttribute="top" id="2DA-UH-8ps"/>
+                            <constraint firstItem="EIN-rO-pkD" firstAttribute="leading" secondItem="hiR-JL-RR9" secondAttribute="leading" id="9CJ-Pl-ELc"/>
                             <constraint firstItem="hiR-JL-RR9" firstAttribute="trailing" secondItem="4US-6G-6LZ" secondAttribute="trailing" id="Hri-1g-4bA"/>
                             <constraint firstItem="4US-6G-6LZ" firstAttribute="leading" secondItem="hiR-JL-RR9" secondAttribute="leading" id="IuH-SE-O6z"/>
+                            <constraint firstItem="4US-6G-6LZ" firstAttribute="top" secondItem="EIN-rO-pkD" secondAttribute="bottom" id="d2d-Yj-BZN"/>
+                            <constraint firstItem="EIN-rO-pkD" firstAttribute="top" secondItem="hiR-JL-RR9" secondAttribute="top" id="hsC-9u-4xL"/>
                             <constraint firstItem="hiR-JL-RR9" firstAttribute="bottom" secondItem="4US-6G-6LZ" secondAttribute="bottom" id="lgY-PX-sYR"/>
+                            <constraint firstItem="EIN-rO-pkD" firstAttribute="trailing" secondItem="hiR-JL-RR9" secondAttribute="trailing" id="ymb-Mb-rvY"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="searchBar" destination="EIN-rO-pkD" id="qcS-YB-fdx"/>
                         <outlet property="table" destination="4US-6G-6LZ" id="39v-QE-pGB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="imG-um-IJ1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-432" y="-21"/>
+            <point key="canvasLocation" x="-433.33333333333337" y="-21.428571428571427"/>
         </scene>
     </scenes>
     <resources>

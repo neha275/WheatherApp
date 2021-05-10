@@ -24,7 +24,7 @@ class MainViewModel  {
     }()
     
     private lazy var dayFormatter :DateFormatter = {
-         let formatter = DateFormatter()
+        let formatter = DateFormatter()
         formatter.dateFormat = "EEE"
         return formatter
     }()
@@ -115,7 +115,48 @@ class MainViewModel  {
         })
     }
     
-    
+    func getWeatherIconFor(icon: String) ->  UIImage{
+        switch  icon {
+        case "01d":
+            return UIImage(systemName: "sun.max.fill")!
+        case "01n":
+            return UIImage(systemName: "moon.fill")!
+        case "02d":
+            return UIImage(systemName: "cloud.sun.fill")!
+        case "02n":
+            return UIImage(systemName: "cloud.moon.fill")!
+        case "03d":
+            return UIImage(systemName: "cloud.fill")!
+        case "03n":
+            return UIImage(systemName: "cloud.fill")!
+        case "04d":
+            return UIImage(systemName: "cloud.fill")!
+        case "04n":
+            return UIImage(systemName: "cloud.fill")!
+        case "09d":
+            return UIImage(systemName: "cloud.drizzle.fill")!
+        case "09n":
+            return UIImage(systemName: "cloud.drizzle.fill")!
+        case "10d":
+            return UIImage(systemName: "cloud.heavyrain.fill")!
+        case "10n":
+            return UIImage(systemName: "cloud.heavyrain.fill")!
+        case "11d":
+            return UIImage(systemName: "cloud.bolt.fill")!
+        case "11n":
+            return UIImage(systemName: "cloud.bolt.fill")!
+        case "13d":
+            return UIImage(systemName: "cloud.snow.fill")!
+        case "13n":
+            return UIImage(systemName: "cloud.fog.fill")!
+        case "50d":
+            return UIImage(systemName: "cloud.fog.fill")!
+        case "50n":
+            return UIImage(systemName: "cloud.snow.fill")!
+        default:
+            return UIImage(systemName: "sun.max.fill")!
+        }
+    }
 }
 
 
