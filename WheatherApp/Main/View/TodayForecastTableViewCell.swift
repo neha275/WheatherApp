@@ -11,17 +11,32 @@ class TodayForecastTableViewCell: UITableViewCell {
 
     static let identifier = "TodayForecastTableViewCell"
     
-    @IBOutlet weak var lbl:UILabel!
+    @IBOutlet weak var lblTodayTemp:UILabel!
+    @IBOutlet weak var imgIcon:UIImageView!
+    @IBOutlet weak var lblhumidity: UILabel! //viewModel.humidity
+    @IBOutlet weak var lblWindSpeed: UILabel! //viewModel.windspeed
+    @IBOutlet weak var lblRainChance:UILabel! //viewModel.rainchance
+    @IBOutlet weak var uvBackground:UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        roundedCorner()
+
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
+    
+    func roundedCorner() {
+        uvBackground.layer.cornerRadius = 20
+        uvBackground.layer.masksToBounds = false
+        uvBackground.layer.shadowOffset = CGSize(width: 0,height: 0)
+        uvBackground.layer.shadowOpacity = 0.3
+        uvBackground.layer.shadowColor = UIColor.white.withAlphaComponent(0.1).cgColor
+        
+    }
+    
 
 }
