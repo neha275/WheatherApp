@@ -14,6 +14,8 @@
 		BE4AC58426429C9100850E58 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4AC58326429C9100850E58 /* Weather.swift */; };
 		BE53B5DC263F43470008BC73 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE53B5DB263F43470008BC73 /* MainViewController.swift */; };
 		BE68AC75264333B800B09101 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE68AC74264333B800B09101 /* NetworkManager.swift */; };
+		BE88A82C264C01A000F9F79B /* CityDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE88A82B264C01A000F9F79B /* CityDetailsTableViewCell.swift */; };
+		BE88A82F264C024A00F9F79B /* TodayForecastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE88A82E264C024A00F9F79B /* TodayForecastTableViewCell.swift */; };
 		BE94FCDD26446E1F00988CCF /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE94FCDC26446E1F00988CCF /* API.swift */; };
 		BE94FCE326446E8700988CCF /* API+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE94FCE226446E8700988CCF /* API+Extension.swift */; };
 		BE94FCEC26447D0F00988CCF /* WeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE94FCEB26447D0F00988CCF /* WeatherResponse.swift */; };
@@ -23,7 +25,6 @@
 		BE94FCF826447E3900988CCF /* Temperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE94FCF726447E3900988CCF /* Temperature.swift */; };
 		BEBE0ECD264957E20099BD96 /* GooglePlaces in Frameworks */ = {isa = PBXBuildFile; fileRef = BEBE0ECC264957E10099BD96 /* GooglePlaces */; };
 		BEBE0ED0264957FC0099BD96 /* GoogleMapsBase in Frameworks */ = {isa = PBXBuildFile; fileRef = BEBE0ECF264957FC0099BD96 /* GoogleMapsBase */; };
-		BEBE0ED226495C180099BD96 /* GooglePlaces.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BEBE0ED126495C170099BD96 /* GooglePlaces.bundle */; };
 		BEBE0ED526495C3B0099BD96 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEBE0ED426495C3B0099BD96 /* Accelerate.framework */; };
 		BEBE0ED726495C460099BD96 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEBE0ED626495C460099BD96 /* CoreData.framework */; };
 		BEBE0ED926495C690099BD96 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEBE0ED826495C690099BD96 /* CoreGraphics.framework */; };
@@ -31,14 +32,16 @@
 		BEBE0EDD26495C880099BD96 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEBE0EDC26495C880099BD96 /* CoreLocation.framework */; };
 		BEBE0EDF26495C9D0099BD96 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEBE0EDE26495C9D0099BD96 /* CoreTelephony.framework */; };
 		BEBE0EE126495CA70099BD96 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEBE0EE026495CA70099BD96 /* CoreText.framework */; };
-		BEBE0EE326495CB30099BD96 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEBE0EE226495CB30099BD96 /* GLKit.framework */; };
+		BEBE0EE326495CB30099BD96 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEBE0EE226495CB30099BD96 /* GLKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		BEBE0EE526495CBD0099BD96 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEBE0EE426495CBD0099BD96 /* ImageIO.framework */; };
 		BEBE0EE726495CCE0099BD96 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BEBE0EE626495CCE0099BD96 /* libc++.tbd */; };
 		BEBE0EE926495CDA0099BD96 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BEBE0EE826495CDA0099BD96 /* libz.tbd */; };
-		BEBE0EEB26495CE50099BD96 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEBE0EEA26495CE50099BD96 /* OpenGLES.framework */; };
+		BEBE0EEB26495CE50099BD96 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEBE0EEA26495CE50099BD96 /* OpenGLES.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		BEBE0EED26495CF00099BD96 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEBE0EEC26495CF00099BD96 /* QuartzCore.framework */; };
 		BEBE0EEF26495CFB0099BD96 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEBE0EEE26495CFB0099BD96 /* SystemConfiguration.framework */; };
 		BEBE0EF126495D010099BD96 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEBE0EF026495D010099BD96 /* UIKit.framework */; };
+		BEDCD410264A707D00922681 /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEDCD40F264A707D00922681 /* MetalKit.framework */; };
+		BEDCD423264A752F00922681 /* GooglePlaces.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BEDCD422264A752F00922681 /* GooglePlaces.bundle */; };
 		BEF2093E263F3E3300F1E757 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF2093D263F3E3300F1E757 /* AppDelegate.swift */; };
 		BEF20940263F3E3300F1E757 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF2093F263F3E3300F1E757 /* SceneDelegate.swift */; };
 		BEF20945263F3E3300F1E757 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEF20943263F3E3300F1E757 /* Main.storyboard */; };
@@ -54,6 +57,8 @@
 		BE4AC58326429C9100850E58 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		BE53B5DB263F43470008BC73 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		BE68AC74264333B800B09101 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		BE88A82B264C01A000F9F79B /* CityDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		BE88A82E264C024A00F9F79B /* TodayForecastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayForecastTableViewCell.swift; sourceTree = "<group>"; };
 		BE94FCDC26446E1F00988CCF /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		BE94FCE226446E8700988CCF /* API+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+Extension.swift"; sourceTree = "<group>"; };
 		BE94FCEB26447D0F00988CCF /* WeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResponse.swift; sourceTree = "<group>"; };
@@ -63,7 +68,6 @@
 		BE94FCF726447E3900988CCF /* Temperature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temperature.swift; sourceTree = "<group>"; };
 		BEBE0ECC264957E10099BD96 /* GooglePlaces */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = GooglePlaces; sourceTree = "<group>"; };
 		BEBE0ECF264957FC0099BD96 /* GoogleMapsBase */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = GoogleMapsBase; sourceTree = "<group>"; };
-		BEBE0ED126495C170099BD96 /* GooglePlaces.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GooglePlaces.bundle; path = "../../../../../../../../../Downloads/Safari Downloads/GooglePlaces-4.2.0/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle"; sourceTree = "<group>"; };
 		BEBE0ED426495C3B0099BD96 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		BEBE0ED626495C460099BD96 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		BEBE0ED826495C690099BD96 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -79,6 +83,8 @@
 		BEBE0EEC26495CF00099BD96 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		BEBE0EEE26495CFB0099BD96 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		BEBE0EF026495D010099BD96 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		BEDCD40F264A707D00922681 /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
+		BEDCD422264A752F00922681 /* GooglePlaces.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GooglePlaces.bundle; sourceTree = "<group>"; };
 		BEF2093A263F3E3300F1E757 /* WheatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WheatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEF2093D263F3E3300F1E757 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEF2093F263F3E3300F1E757 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +108,7 @@
 				BEBE0EE526495CBD0099BD96 /* ImageIO.framework in Frameworks */,
 				BEBE0EE326495CB30099BD96 /* GLKit.framework in Frameworks */,
 				BEBE0EE126495CA70099BD96 /* CoreText.framework in Frameworks */,
+				BEDCD410264A707D00922681 /* MetalKit.framework in Frameworks */,
 				BEBE0EDF26495C9D0099BD96 /* CoreTelephony.framework in Frameworks */,
 				BEBE0EDD26495C880099BD96 /* CoreLocation.framework in Frameworks */,
 				BEBE0EDB26495C740099BD96 /* CoreImage.framework in Frameworks */,
@@ -121,6 +128,8 @@
 			children = (
 				BE4AC57B26429A4800850E58 /* HourlyCell */,
 				BE4AC57A26429A3D00850E58 /* WeatherCell */,
+				BE88A82B264C01A000F9F79B /* CityDetailsTableViewCell.swift */,
+				BE88A82E264C024A00F9F79B /* TodayForecastTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -221,7 +230,7 @@
 		BEBE0ECB264957C80099BD96 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
-				BEBE0ED126495C170099BD96 /* GooglePlaces.bundle */,
+				BEDCD422264A752F00922681 /* GooglePlaces.bundle */,
 				BEBE0ECF264957FC0099BD96 /* GoogleMapsBase */,
 				BEBE0ECC264957E10099BD96 /* GooglePlaces */,
 			);
@@ -231,6 +240,7 @@
 		BEBE0ED326495C3A0099BD96 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BEDCD40F264A707D00922681 /* MetalKit.framework */,
 				BEBE0EF026495D010099BD96 /* UIKit.framework */,
 				BEBE0EEE26495CFB0099BD96 /* SystemConfiguration.framework */,
 				BEBE0EEC26495CF00099BD96 /* QuartzCore.framework */,
@@ -350,7 +360,7 @@
 				BEF2094A263F3E3E00F1E757 /* LaunchScreen.storyboard in Resources */,
 				BEF20947263F3E3E00F1E757 /* Assets.xcassets in Resources */,
 				BEF20945263F3E3300F1E757 /* Main.storyboard in Resources */,
-				BEBE0ED226495C180099BD96 /* GooglePlaces.bundle in Resources */,
+				BEDCD423264A752F00922681 /* GooglePlaces.bundle in Resources */,
 				BE4AC58026429AB600850E58 /* HourlyCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -368,11 +378,13 @@
 				BEF2093E263F3E3300F1E757 /* AppDelegate.swift in Sources */,
 				BE94FCF526447E0C00988CCF /* DailyWeather.swift in Sources */,
 				BE68AC75264333B800B09101 /* NetworkManager.swift in Sources */,
+				BE88A82C264C01A000F9F79B /* CityDetailsTableViewCell.swift in Sources */,
 				BE94FCE326446E8700988CCF /* API+Extension.swift in Sources */,
 				BEF20940263F3E3300F1E757 /* SceneDelegate.swift in Sources */,
 				BE4AC58426429C9100850E58 /* Weather.swift in Sources */,
 				BE94FCDD26446E1F00988CCF /* API.swift in Sources */,
 				BE94FCF226447DFD00988CCF /* WeatherDetail.swift in Sources */,
+				BE88A82F264C024A00F9F79B /* TodayForecastTableViewCell.swift in Sources */,
 				BE4AC57F26429AB600850E58 /* HourlyCollectionViewCell.swift in Sources */,
 				BE94FCF826447E3900988CCF /* Temperature.swift in Sources */,
 				BE94FCEF26447DB400988CCF /* MainViewModel.swift in Sources */,
@@ -526,6 +538,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2Q459GXYYZ;
+				EXCLUDED_ARCHS = arm64;
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = WheatherApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -545,6 +559,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2Q459GXYYZ;
+				EXCLUDED_ARCHS = arm64;
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = WheatherApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

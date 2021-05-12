@@ -20,7 +20,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setUpPlaceApi()
+            //setUpPlaceApi()
         table.register(HourlyCollectionViewCell.nib(), forCellReuseIdentifier: HourlyCollectionViewCell.identifier)
         table.register(WeatherTableViewCell.nib(), forCellReuseIdentifier: WeatherTableViewCell.identifier)
         
@@ -77,6 +77,7 @@ extension MainViewController: CLLocationManagerDelegate {
         
     }
 }
+/*
 //MArk: - Google Place Api
 extension MainViewController : UISearchBarDelegate, GMSAutocompleteResultsViewControllerDelegate {
     
@@ -126,4 +127,4 @@ extension MainViewController : UISearchBarDelegate, GMSAutocompleteResultsViewCo
       func didUpdateAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
       }
-}
+}*/
