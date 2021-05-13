@@ -38,5 +38,13 @@ class TodayForecastTableViewCell: UITableViewCell {
         
     }
     
+    func configure(mainViewModel: MainViewModel) {
+        lblTodayTemp.text =  mainViewModel.getTempFor(temp: mainViewModel.weather.current.temp)
+        lblhumidity.text = mainViewModel.humidity
+        lblWindSpeed.text = mainViewModel.windSped
+        lblRainChance.text = mainViewModel.rainChance
+        
+        imgIcon.image =  UIImage(systemName: mainViewModel.weatherIcon)
+    }
 
 }

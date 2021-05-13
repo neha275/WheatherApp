@@ -4,20 +4,76 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="HourlyCollectionViewCell" reuseIdentifier="HourlyCollectionViewCell" id="gTV-IL-0wX" customClass="HourlyCollectionViewCell" customModule="WheatherApp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Xs-ak-1KB">
+                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BoG-B5-2CY" userLabel="time">
+                                <rect key="frame" x="5" y="5" width="90" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OJM-YY-dpe">
+                                <rect key="frame" x="37.5" y="31" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="T8X-0v-rRV"/>
+                                    <constraint firstAttribute="width" constant="25" id="hSA-mj-FvJ"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zFr-ZS-DRY" userLabel="temp">
+                                <rect key="frame" x="5" y="63" width="90" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zFr-ZS-DRY" firstAttribute="leading" secondItem="4Xs-ak-1KB" secondAttribute="leading" constant="5" id="2Ea-fp-Lex"/>
+                            <constraint firstItem="zFr-ZS-DRY" firstAttribute="top" secondItem="OJM-YY-dpe" secondAttribute="bottom" constant="7" id="4x9-zU-LCC"/>
+                            <constraint firstAttribute="bottom" secondItem="zFr-ZS-DRY" secondAttribute="bottom" constant="5" id="BVb-aH-6g9"/>
+                            <constraint firstItem="BoG-B5-2CY" firstAttribute="leading" secondItem="4Xs-ak-1KB" secondAttribute="leading" constant="5" id="CdY-7D-2DA"/>
+                            <constraint firstAttribute="trailing" secondItem="BoG-B5-2CY" secondAttribute="trailing" constant="5" id="Hoa-DY-h8m"/>
+                            <constraint firstItem="BoG-B5-2CY" firstAttribute="top" secondItem="4Xs-ak-1KB" secondAttribute="top" constant="5" id="K6O-X6-7ax"/>
+                            <constraint firstItem="OJM-YY-dpe" firstAttribute="top" secondItem="BoG-B5-2CY" secondAttribute="bottom" constant="8" id="Qcz-Hk-ZZd"/>
+                            <constraint firstItem="OJM-YY-dpe" firstAttribute="centerX" secondItem="4Xs-ak-1KB" secondAttribute="centerX" id="W4y-0T-AM2"/>
+                            <constraint firstAttribute="trailing" secondItem="zFr-ZS-DRY" secondAttribute="trailing" constant="5" id="jcu-Xb-FuO"/>
+                        </constraints>
+                    </view>
+                </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <point key="canvasLocation" x="-29" y="94"/>
+            <constraints>
+                <constraint firstItem="4Xs-ak-1KB" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ArF-ru-6x2"/>
+                <constraint firstAttribute="trailing" secondItem="4Xs-ak-1KB" secondAttribute="trailing" id="GYv-vC-F05"/>
+                <constraint firstItem="4Xs-ak-1KB" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="MQ6-u7-EBx"/>
+                <constraint firstAttribute="bottom" secondItem="4Xs-ak-1KB" secondAttribute="bottom" id="U4f-Sc-5Yg"/>
+            </constraints>
+            <connections>
+                <outlet property="imgWeatherIcon" destination="OJM-YY-dpe" id="6Xi-Ts-pue"/>
+                <outlet property="lblTemp" destination="zFr-ZS-DRY" id="LPg-AW-DaC"/>
+                <outlet property="lblTime" destination="BoG-B5-2CY" id="J5N-Mp-Adc"/>
+                <outlet property="uvBackground" destination="4Xs-ak-1KB" id="vCe-hM-apr"/>
+            </connections>
+            <point key="canvasLocation" x="-30.434782608695656" y="93.75"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

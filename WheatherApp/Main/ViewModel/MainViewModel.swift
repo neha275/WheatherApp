@@ -13,7 +13,7 @@ class MainViewModel  {
     var weather = WeatherResponse.empty()
     var city: String = "Mumbai" {
         didSet{
-            getLoacation()
+            //getLoacation()
         }
     }
     
@@ -35,9 +35,9 @@ class MainViewModel  {
         return formatter
     }()
     
-    init() {
-        getLoacation()
-    }
+//    init() {
+//        getLoacation()
+//    }
     
     var date:String {
         return dateFormatter.string(from: Date(timeIntervalSince1970: TimeInterval(weather.current.dt)))
@@ -82,35 +82,50 @@ class MainViewModel  {
         return timeFormatter.string(from: Date(timeIntervalSince1970: TimeInterval(timestamp)))
     }
     
-    private func getLoacation() {
+    func getLoacationCoordinateFromCityName()   {
         CLGeocoder().geocodeAddressString(city, completionHandler: {(placeMarks, error) in
             if let places = placeMarks, let place = places.first {
-                self.getWeather(coordination: place.location?.coordinate)
+                //self.getWeather(coordination: place.location?.coordinate)
+                print(place)
             }
             
         })
     }
     
-    private func getWeather(coordination : CLLocationCoordinate2D?) {
-        if let coordination = coordination {
-            let urlString = API.getURLFor(lat: coordination.latitude, lon: coordination.longitude)
-            getWeatherInternal(city: city, for: urlString)
-        }else {
-            let urlString = API.getURLFor(lat: 37.5485, lon: -121.9886)
-            getWeatherInternal(city: city, for: urlString)
-        }
+    func getWeatherFromLoaction(coordination: CLLocationCoordinate2D,completionHandler: @escaping (Bool,String) -> Void)  {
+        let urlString = API.getURLFor(lat: coordination.latitude, lon: coordination.longitude)
+        getWeatherInternal(city: city, for: urlString, completionHandler: { status, error, response -> Void  in
+            if status {
+                self.weather = response!
+                return completionHandler (true,String())
+            }else {
+                return completionHandler(false,error)
+            }
+        })
     }
     
-    private func getWeatherInternal(city: String, for urlString: String) {
+//    private func getWeather(coordination : CLLocationCoordinate2D?) {
+//        if let coordination = coordination {
+//            let urlString = API.getURLFor(lat: coordination.latitude, lon: coordination.longitude)
+//            getWeatherInternal(city: city, for: urlString, completionHandler: <#(Bool, String) -> Void#>)
+//        }else {
+//            let urlString = API.getURLFor(lat: 37.5485, lon: -121.9886)
+//            getWeatherInternal(city: city, for: urlString, completionHandler: <#(Bool, String) -> Void#>)
+//        }
+//    }
+    
+    private func getWeatherInternal(city: String, for urlString: String, completionHandler: @escaping (Bool,String, WeatherResponse?) -> Void) {
         NetworkManager<WeatherResponse>.fetch(for: URL(string: urlString)!, completion: {result in
             switch result {
             case .success(let response):
                 DispatchQueue.main.async {
                     self.weather = response
                 }
+                completionHandler(true,String(), response)
                 break
             case .failure(let err):
                 print(err)
+                completionHandler(false,err.localizedDescription, nil)
             }
         })
     }

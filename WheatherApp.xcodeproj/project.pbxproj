@@ -23,6 +23,8 @@
 		BE94FCF226447DFD00988CCF /* WeatherDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE94FCF126447DFD00988CCF /* WeatherDetail.swift */; };
 		BE94FCF526447E0C00988CCF /* DailyWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE94FCF426447E0C00988CCF /* DailyWeather.swift */; };
 		BE94FCF826447E3900988CCF /* Temperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE94FCF726447E3900988CCF /* Temperature.swift */; };
+		BEB5ED70264D0D2400711B24 /* HourlyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB5ED6E264D0D2400711B24 /* HourlyTableViewCell.swift */; };
+		BEB5ED71264D0D2400711B24 /* HourlyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEB5ED6F264D0D2400711B24 /* HourlyTableViewCell.xib */; };
 		BEBE0ECD264957E20099BD96 /* GooglePlaces in Frameworks */ = {isa = PBXBuildFile; fileRef = BEBE0ECC264957E10099BD96 /* GooglePlaces */; };
 		BEBE0ED0264957FC0099BD96 /* GoogleMapsBase in Frameworks */ = {isa = PBXBuildFile; fileRef = BEBE0ECF264957FC0099BD96 /* GoogleMapsBase */; };
 		BEBE0ED526495C3B0099BD96 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEBE0ED426495C3B0099BD96 /* Accelerate.framework */; };
@@ -66,6 +68,8 @@
 		BE94FCF126447DFD00988CCF /* WeatherDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetail.swift; sourceTree = "<group>"; };
 		BE94FCF426447E0C00988CCF /* DailyWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeather.swift; sourceTree = "<group>"; };
 		BE94FCF726447E3900988CCF /* Temperature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temperature.swift; sourceTree = "<group>"; };
+		BEB5ED6E264D0D2400711B24 /* HourlyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyTableViewCell.swift; sourceTree = "<group>"; };
+		BEB5ED6F264D0D2400711B24 /* HourlyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HourlyTableViewCell.xib; sourceTree = "<group>"; };
 		BEBE0ECC264957E10099BD96 /* GooglePlaces */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = GooglePlaces; sourceTree = "<group>"; };
 		BEBE0ECF264957FC0099BD96 /* GoogleMapsBase */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = GoogleMapsBase; sourceTree = "<group>"; };
 		BEBE0ED426495C3B0099BD96 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
@@ -148,6 +152,8 @@
 			children = (
 				BE4AC57D26429AB600850E58 /* HourlyCollectionViewCell.swift */,
 				BE4AC57E26429AB600850E58 /* HourlyCollectionViewCell.xib */,
+				BEB5ED6E264D0D2400711B24 /* HourlyTableViewCell.swift */,
+				BEB5ED6F264D0D2400711B24 /* HourlyTableViewCell.xib */,
 			);
 			path = HourlyCell;
 			sourceTree = "<group>";
@@ -361,6 +367,7 @@
 				BEF20947263F3E3E00F1E757 /* Assets.xcassets in Resources */,
 				BEF20945263F3E3300F1E757 /* Main.storyboard in Resources */,
 				BEDCD423264A752F00922681 /* GooglePlaces.bundle in Resources */,
+				BEB5ED71264D0D2400711B24 /* HourlyTableViewCell.xib in Resources */,
 				BE4AC58026429AB600850E58 /* HourlyCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -377,6 +384,7 @@
 				BE53B5DC263F43470008BC73 /* MainViewController.swift in Sources */,
 				BEF2093E263F3E3300F1E757 /* AppDelegate.swift in Sources */,
 				BE94FCF526447E0C00988CCF /* DailyWeather.swift in Sources */,
+				BEB5ED70264D0D2400711B24 /* HourlyTableViewCell.swift in Sources */,
 				BE68AC75264333B800B09101 /* NetworkManager.swift in Sources */,
 				BE88A82C264C01A000F9F79B /* CityDetailsTableViewCell.swift in Sources */,
 				BE94FCE326446E8700988CCF /* API+Extension.swift in Sources */,
