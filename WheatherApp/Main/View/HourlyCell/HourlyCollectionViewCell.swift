@@ -28,10 +28,11 @@ class HourlyCollectionViewCell: UICollectionViewCell {
     func configure(with model: Weather) {
             self.lblTemp.text = "\(model.temp)"
             self.lblTemp.contentMode = .scaleAspectFit
-            self.imgWeatherIcon.image = UIImage(named: "clear")
+            self.imgWeatherIcon.image = UIImage(named: "sun.max.fill")
     }
     
     func roundedCorner() {
+        //uvBackground.backgroundColor = UIColor.blue
         uvBackground.layer.cornerRadius = 20
         uvBackground.layer.masksToBounds = false
         uvBackground.layer.shadowOffset = CGSize(width: 0,height: 0)

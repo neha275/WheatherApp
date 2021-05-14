@@ -6,14 +6,14 @@
 //
 
 import UIKit
-import GooglePlaces
+//import GooglePlaces
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        GMSPlacesClient.provideAPIKey("AIzaSyBvOoiZZlpWfsM83-itnMlK-ZtWvR0-uHM")
+        //GMSPlacesClient.provideAPIKey("AIzaSyBvOoiZZlpWfsM83-itnMlK-ZtWvR0-uHM")
         return true
     }
 

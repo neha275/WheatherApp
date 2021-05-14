@@ -21,7 +21,8 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
 
             //setUpPlaceApi()
-        table.register(HourlyCollectionViewCell.nib(), forCellReuseIdentifier: HourlyCollectionViewCell.identifier)
+        requestWeatherForLoaction()
+        table.register(HourlyTableViewCell.nib(), forCellReuseIdentifier: HourlyTableViewCell.identifier)
         table.register(WeatherTableViewCell.nib(), forCellReuseIdentifier: WeatherTableViewCell.identifier)
         
     }
@@ -34,21 +35,30 @@ class MainViewController: UIViewController {
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 4
+        if mvWeatherResponse != nil  {
+            return 4
+        }
+       return 0
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch (section) {
-            case 0,1,2: /* City details, Today ForeCast, Hourly Forecast */
+        if mvWeatherResponse != nil {
+            switch (section) {
+                case 0,1,2: /* City details, Today ForeCast, Hourly Forecast */
+                    return 1
+                case 3: /* Time wise temperature */
+                    return  mvWeatherResponse.weather.daily.count
+            default:
                 return 1
-            case 3: /* Time wise temperature */
-            return mvWeatherResponse.weather.daily.count
-        default:
-            return 1
+            }
+        }else {
+            return 0
         }
+        
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == 0 {
+        
+        if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: CityDetailsTableViewCell.identifier, for: indexPath) as! CityDetailsTableViewCell
             cell.lblCityName.text = mvWeatherResponse.city
             let date = Date()
@@ -56,12 +66,13 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             dateFormatter.dateFormat = "EEEE, MMMM dd, yyyy"
             cell.lblCurrentDate.text = dateFormatter.string(from: date)
             return cell
-        } else if indexPath.row == 1 {
+        } else if indexPath.section == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: TodayForecastTableViewCell.identifier, for: indexPath) as! TodayForecastTableViewCell
             cell.configure(mainViewModel: mvWeatherResponse)
             return cell
-        }else if indexPath.row == 2 {
+        }else if indexPath.section == 2 {
             let cell = tableView.dequeueReusableCell(withIdentifier: HourlyTableViewCell.identifier, for: indexPath) as! HourlyTableViewCell
+            cell.configure(with: mvWeatherResponse.weather.hourly)
             return cell
         }else {
             let cell = tableView.dequeueReusableCell(withIdentifier: WeatherTableViewCell.identifier, for: indexPath) as! WeatherTableViewCell
@@ -72,7 +83,13 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        if indexPath.section == 0 {
+            return 50
+        }else if indexPath.section == 1 {
+            return 199
+        }else {
+            return 100
+        }
     }
     
 }
@@ -83,18 +100,21 @@ extension MainViewController: CLLocationManagerDelegate {
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
+        requestWeatherForLoaction()
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if !locations.isEmpty , currentLoaction == nil {
             currentLoaction = locations.first
             locationManager.stopUpdatingLocation()
+            
             requestWeatherForLoaction()
         }
     }
     
     func requestWeatherForLoaction() {
         guard let currentLoaction = currentLoaction else {
+            print("No location found")
             return
         }
         let long = currentLoaction.coordinate.longitude
@@ -103,7 +123,10 @@ extension MainViewController: CLLocationManagerDelegate {
         mvWeatherResponse = MainViewModel()
         mvWeatherResponse.getWeatherFromLoaction(coordination: currentLoaction.coordinate, completionHandler: {status, error -> Void in
             if status {
-                self.table.reloadData()
+                DispatchQueue.main.async {
+                    self.table.reloadData()
+                }
+                
             }else {
                 print(error)
             }
