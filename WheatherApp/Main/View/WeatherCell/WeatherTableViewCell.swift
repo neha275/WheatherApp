@@ -32,11 +32,12 @@ class WeatherTableViewCell: UITableViewCell {
     }
     
     func configuare(to model: DailyWeather){
-        self.lbllowTemp.text = "\(Int(model.temp.min)) ℉"
-        self.lblhighTemp.text = "\(Int(model.temp.max)) ℉"
-        let mvModel : MainViewModel =  MainViewModel()
-        self.lblday.text = mvModel.getDayFor(timestamp: model.dt).uppercased()
         
+        
+        let mvModel : MainViewModel =  MainViewModel()
+        self.lbllowTemp.text = mvModel.getTempFor(temp: model.temp.min) //"\(Int(model.temp.min)) ℉"
+        self.lblhighTemp.text = mvModel.getTempFor(temp: model.temp.max) //"\(Int(model.temp.max)) ℉"
+        self.lblday.text = mvModel.getDayFor(timestamp: model.dt).uppercased()
         imgIcon.image = mvModel.getWeatherIconFor(icon: model.weather.count > 0 ? model.weather[0].icon : "sun.max.fill")
     }
     

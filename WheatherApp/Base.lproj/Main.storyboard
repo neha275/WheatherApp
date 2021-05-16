@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,6 +17,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="vWw-Jl-XoG">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                             <searchBar contentMode="redraw" placeholder="Enter Location" translatesAutoresizingMaskIntoConstraints="NO" id="EIN-rO-pkD">
                                 <rect key="frame" x="0.0" y="44" width="414" height="56"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="yes" spellCheckingType="yes"/>
@@ -81,6 +86,7 @@
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun.max.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="55w-Is-TEe">
                                                                     <rect key="frame" x="0.0" y="-0.5" width="60" height="60.5"/>
+                                                                    <color key="tintColor" systemColor="systemYellowColor"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="60" id="jYA-YP-ThQ"/>
                                                                         <constraint firstAttribute="height" constant="60" id="tpD-yR-dTH"/>
@@ -135,7 +141,6 @@
                                                             </subviews>
                                                         </stackView>
                                                     </subviews>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstItem="s19-8B-snm" firstAttribute="centerX" secondItem="RNo-yC-8dF" secondAttribute="centerX" id="0B7-lb-rqM"/>
                                                         <constraint firstItem="PUA-xU-J3d" firstAttribute="centerX" secondItem="RNo-yC-8dF" secondAttribute="centerX" id="355-Vs-De3"/>
@@ -160,6 +165,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="RNo-yC-8dF" secondAttribute="trailing" id="zxD-AO-iPt"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="tintColor" name="AccentColor"/>
                                         <connections>
                                             <outlet property="imgIcon" destination="55w-Is-TEe" id="c91-LU-DEz"/>
                                             <outlet property="lblRainChance" destination="NFw-9g-6Fy" id="IeS-jf-5Vw"/>
@@ -185,7 +191,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hiR-JL-RR9"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.42745098039215684" green="0.45882352941176469" blue="0.5490196078431373" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="EIN-rO-pkD" firstAttribute="leading" secondItem="hiR-JL-RR9" secondAttribute="leading" id="9CJ-Pl-ELc"/>
                             <constraint firstItem="hiR-JL-RR9" firstAttribute="trailing" secondItem="4US-6G-6LZ" secondAttribute="trailing" id="Hri-1g-4bA"/>
@@ -197,6 +203,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityLoader" destination="vWw-Jl-XoG" id="Lgy-b5-agR"/>
                         <outlet property="searchBar" destination="EIN-rO-pkD" id="qcS-YB-fdx"/>
                         <outlet property="table" destination="4US-6G-6LZ" id="39v-QE-pGB"/>
                     </connections>
@@ -211,8 +218,14 @@
         <image name="sun.max.fill" catalog="system" width="128" height="124"/>
         <image name="umbrella.fill" catalog="system" width="124" height="128"/>
         <image name="wind" catalog="system" width="128" height="101"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -11,11 +11,12 @@ import CoreLocation
 class MainViewModel  {
     
     var weather = WeatherResponse.empty()
-    var city: String = "Mumbai" {
-        didSet{
-            //getLoacation()
-        }
-    }
+    var city: String! // = {
+//        didSet{
+//            print("city Name ")
+//        }
+//
+//    }
     
     private lazy var dateFormatter : DateFormatter  = {
         let formatter = DateFormatter()
@@ -55,7 +56,8 @@ class MainViewModel  {
     }
     
     func getTempFor(temp: Double) -> String {
-        return String(format: "%0.1f", temp)
+        let temp = String(format: "%0.1f", temp)
+        return "\(temp) ℉"
     }
     
     
@@ -78,8 +80,13 @@ class MainViewModel  {
         return String(format: "%0.1f%", weather.current.dew_point)
     }
     
-    func getDayFor(timestamp: Int)-> String {
+    func gettimeFor(timestamp: Int)-> String {
         return timeFormatter.string(from: Date(timeIntervalSince1970: TimeInterval(timestamp)))
+    }
+    
+    func getDayFor(timestamp: Int) -> String {
+        let date = Date(timeIntervalSince1970: TimeInterval(timestamp))
+        return dayFormatter.string(from: date)
     }
     
     func getLoacationCoordinateFromCityName()   {
@@ -114,7 +121,7 @@ class MainViewModel  {
 //        }
 //    }
     
-    private func getWeatherInternal(city: String, for urlString: String, completionHandler: @escaping (Bool,String, WeatherResponse?) -> Void) {
+    private func getWeatherInternal(city: String?, for urlString: String, completionHandler: @escaping (Bool,String, WeatherResponse?) -> Void) {
         NetworkManager<WeatherResponse>.fetch(for: URL(string: urlString)!, completion: {result in
             switch result {
             case .success(let response):

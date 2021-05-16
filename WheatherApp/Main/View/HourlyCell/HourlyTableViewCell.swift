@@ -47,7 +47,8 @@ class HourlyTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollecti
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HourlyCollectionViewCell.identifier, for: indexPath) as! HourlyCollectionViewCell
-                cell.configure(with: models[indexPath.row])
+        cell.configure(with: models[indexPath.row])
+        cell.backgroundColor = UIColor.clear
                 return cell
     }
     

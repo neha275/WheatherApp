@@ -12,6 +12,7 @@ class MainViewController: UIViewController {
 
     @IBOutlet weak var table:UITableView!
     @IBOutlet weak var searchBar:UISearchBar!
+    @IBOutlet weak var activityLoader:UIActivityIndicatorView!
     
     var mvWeatherResponse:MainViewModel!
     let locationManager = CLLocationManager()
@@ -20,7 +21,8 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-            //setUpPlaceApi()
+        activityLoader.isHidden = true
+        table.isHidden = true
         requestWeatherForLoaction()
         table.register(HourlyTableViewCell.nib(), forCellReuseIdentifier: HourlyTableViewCell.identifier)
         table.register(WeatherTableViewCell.nib(), forCellReuseIdentifier: WeatherTableViewCell.identifier)
@@ -60,7 +62,8 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: CityDetailsTableViewCell.identifier, for: indexPath) as! CityDetailsTableViewCell
-            cell.lblCityName.text = mvWeatherResponse.city
+            cell.backgroundColor = UIColor.clear
+            cell.lblCityName.text = mvWeatherResponse.city.isEmpty ? mvWeatherResponse.city : "Mumbai"
             let date = Date()
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "EEEE, MMMM dd, yyyy"
@@ -68,16 +71,19 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         } else if indexPath.section == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: TodayForecastTableViewCell.identifier, for: indexPath) as! TodayForecastTableViewCell
+            cell.backgroundColor = UIColor.clear
             cell.configure(mainViewModel: mvWeatherResponse)
             return cell
         }else if indexPath.section == 2 {
             let cell = tableView.dequeueReusableCell(withIdentifier: HourlyTableViewCell.identifier, for: indexPath) as! HourlyTableViewCell
+            cell.backgroundColor = UIColor.clear
             cell.configure(with: mvWeatherResponse.weather.hourly)
             return cell
         }else {
             let cell = tableView.dequeueReusableCell(withIdentifier: WeatherTableViewCell.identifier, for: indexPath) as! WeatherTableViewCell
             let dailyWeather = mvWeatherResponse.weather.daily[indexPath.row]
             cell.configuare(to: dailyWeather)
+            cell.backgroundColor = UIColor.clear
             return cell
         }
     }
@@ -87,11 +93,29 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             return 50
         }else if indexPath.section == 1 {
             return 199
-        }else {
+        }else if indexPath.section == 3 {
+            return 100
+        }
+        else {
             return 100
         }
     }
     
+    func setTableViewBackgroundGradient() {
+        let topColor:UIColor = UIColor.white
+        let bottomColor:UIColor =  UIColor.blue.withAlphaComponent(0.5)
+        let gradientBackgroundColors = [topColor.cgColor, bottomColor.cgColor]
+        let gradientLocations:[NSNumber] = [0.0,1.0]
+
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = gradientBackgroundColors 
+        gradientLayer.locations = gradientLocations
+
+        gradientLayer.frame = self.table.bounds
+        let backgroundView = UIView(frame: table.bounds)
+        backgroundView.layer.insertSublayer(gradientLayer, at: 0)
+        table.backgroundView = backgroundView
+    }
 }
 //MARK: - Location
 extension MainViewController: CLLocationManagerDelegate {
@@ -101,6 +125,7 @@ extension MainViewController: CLLocationManagerDelegate {
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         requestWeatherForLoaction()
+        
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -109,7 +134,47 @@ extension MainViewController: CLLocationManagerDelegate {
             locationManager.stopUpdatingLocation()
             
             requestWeatherForLoaction()
+           
         }
+    }
+    
+    private func setCityNameFromCoordinates() {
+        guard let exposedLocation = self.locationManager.location else {
+            print("*** Error in \(#function): exposedLocation is nil")
+            return
+        }
+        self.getPlace(for: exposedLocation) { placemark in
+            guard let placemark = placemark else { return }
+            var output = ""
+//            if let country = placemark.country {
+//                output = output + "\n\(country)"
+//            }
+//            if let state = placemark.administrativeArea {
+//                output = output + "\n\(state)"
+//            }
+            if let town = placemark.locality {
+                output = output + "\n\(town)"
+            }
+            print("City Name: \(output)")
+            self.mvWeatherResponse.city = output
+            }
+        }
+
+    func getPlace(for location: CLLocation, completion: @escaping (CLPlacemark?) -> Void) {
+            let geocoder = CLGeocoder()
+            geocoder.reverseGeocodeLocation(location) { placemarks, error in
+                guard error == nil else {
+                    print("*** Error in \(#function): \(error!.localizedDescription)")
+                    completion(nil)
+                    return
+                }
+                guard let placemark = placemarks?[0] else {
+                    print("*** Error in \(#function): placemark is nil")
+                    completion(nil)
+                    return
+                }
+            completion(placemark)
+            }
     }
     
     func requestWeatherForLoaction() {
@@ -120,11 +185,17 @@ extension MainViewController: CLLocationManagerDelegate {
         let long = currentLoaction.coordinate.longitude
         let lat = currentLoaction.coordinate.latitude
         print("long: \(long) lat:  \(lat)")
+        activityLoader.isHidden = false
+        setCityNameFromCoordinates()
         mvWeatherResponse = MainViewModel()
         mvWeatherResponse.getWeatherFromLoaction(coordination: currentLoaction.coordinate, completionHandler: {status, error -> Void in
             if status {
                 DispatchQueue.main.async {
+                    
+                    self.table.isHidden = false
                     self.table.reloadData()
+                    self.setTableViewBackgroundGradient()
+                    self.activityLoader.isHidden = true
                 }
                 
             }else {
