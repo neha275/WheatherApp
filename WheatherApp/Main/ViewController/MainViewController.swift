@@ -63,7 +63,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: CityDetailsTableViewCell.identifier, for: indexPath) as! CityDetailsTableViewCell
             cell.backgroundColor = UIColor.clear
-            cell.lblCityName.text = mvWeatherResponse.city.isEmpty ? mvWeatherResponse.city : "Mumbai"
+            cell.lblCityName.text = mvWeatherResponse.city != nil  && mvWeatherResponse.city.count > 0 ? mvWeatherResponse.city! : "Mumbai"
             let date = Date()
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "EEEE, MMMM dd, yyyy"
@@ -71,28 +71,29 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         } else if indexPath.section == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: TodayForecastTableViewCell.identifier, for: indexPath) as! TodayForecastTableViewCell
-            cell.backgroundColor = UIColor.clear
+            cell.backgroundColor = UIColor.blue.withAlphaComponent(0.5)
             cell.configure(mainViewModel: mvWeatherResponse)
             return cell
         }else if indexPath.section == 2 {
             let cell = tableView.dequeueReusableCell(withIdentifier: HourlyTableViewCell.identifier, for: indexPath) as! HourlyTableViewCell
-            cell.backgroundColor = UIColor.clear
+            cell.backgroundColor = UIColor.blue.withAlphaComponent(0.5)
             cell.configure(with: mvWeatherResponse.weather.hourly)
             return cell
         }else {
             let cell = tableView.dequeueReusableCell(withIdentifier: WeatherTableViewCell.identifier, for: indexPath) as! WeatherTableViewCell
             let dailyWeather = mvWeatherResponse.weather.daily[indexPath.row]
             cell.configuare(to: dailyWeather)
-            cell.backgroundColor = UIColor.clear
+            cell.backgroundColor = UIColor.blue.withAlphaComponent(0.5)
             return cell
         }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
-            return 50
+            tableView.estimatedRowHeight = 63
+            return UITableView.automaticDimension
         }else if indexPath.section == 1 {
-            return 199
+            return 250
         }else if indexPath.section == 3 {
             return 100
         }
@@ -101,16 +102,17 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    
     func setTableViewBackgroundGradient() {
-        let topColor:UIColor = UIColor.white
+        let topColor:UIColor =  UIColor.blue
         let bottomColor:UIColor =  UIColor.blue.withAlphaComponent(0.5)
         let gradientBackgroundColors = [topColor.cgColor, bottomColor.cgColor]
-        let gradientLocations:[NSNumber] = [0.0,1.0]
-
         let gradientLayer = CAGradientLayer()
         gradientLayer.colors = gradientBackgroundColors 
-        gradientLayer.locations = gradientLocations
-
+        gradientLayer.locations = [0.0,1.0]
+        gradientLayer.startPoint = CGPoint(x: 0.5, y: 0)
+        gradientLayer.endPoint = CGPoint(x: 0.5, y: 1)
+        
         gradientLayer.frame = self.table.bounds
         let backgroundView = UIView(frame: table.bounds)
         backgroundView.layer.insertSublayer(gradientLayer, at: 0)
@@ -153,7 +155,7 @@ extension MainViewController: CLLocationManagerDelegate {
 //                output = output + "\n\(state)"
 //            }
             if let town = placemark.locality {
-                output = output + "\n\(town)"
+                output = output + "\(town)"
             }
             print("City Name: \(output)")
             self.mvWeatherResponse.city = output

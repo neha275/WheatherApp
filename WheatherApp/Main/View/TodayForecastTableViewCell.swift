@@ -32,19 +32,24 @@ class TodayForecastTableViewCell: UITableViewCell {
     func roundedCorner() {
         uvBackground.layer.cornerRadius = 20
         uvBackground.layer.masksToBounds = false
-        uvBackground.layer.shadowOffset = CGSize(width: 0,height: 0)
-        uvBackground.layer.shadowOpacity = 0.3
-        uvBackground.layer.shadowColor = UIColor.white.withAlphaComponent(0.1).cgColor
-        
+        uvBackground.layer.borderWidth = 1.0
+        uvBackground.layer.borderColor = UIColor.white.cgColor
+        uvBackground.backgroundColor = UIColor.red.withAlphaComponent(0.2)
+//        let gradientLayer = CAGradientLayer()
+//        gradientLayer.colors = [UIColor.blue.withAlphaComponent(0.5), UIColor.blue]
+//        gradientLayer.startPoint = CGPoint(x: 0.5, y: 0)
+//        gradientLayer.endPoint = CGPoint(x: 0.5, y: 1)
+//        gradientLayer.locations =  [0.0,1.0]
+//        gradientLayer.frame = uvBackground.bounds
+//        uvBackground.layer.insertSublayer(gradientLayer, at: 0)
     }
     
     func configure(mainViewModel: MainViewModel) {
         lblTodayTemp.text =  mainViewModel.getTempFor(temp: mainViewModel.weather.current.temp)
         lblhumidity.text = mainViewModel.humidity
-        lblWindSpeed.text = mainViewModel.windSped
+        lblWindSpeed.text = "\(mainViewModel.windSped)mi/hr"
         lblRainChance.text = mainViewModel.rainChance
-        
-        imgIcon.image =  UIImage(systemName: mainViewModel.weatherIcon)
+        imgIcon.image =  mainViewModel.getWeatherIconFor(icon: mainViewModel.weatherIcon)
     }
 
 }
