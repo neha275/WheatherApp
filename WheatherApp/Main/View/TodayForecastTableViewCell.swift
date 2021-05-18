@@ -20,7 +20,7 @@ class TodayForecastTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        roundedCorner()
+        //roundedCorner()
 
         
     }

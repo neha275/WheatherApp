@@ -15,6 +15,7 @@ class WeatherTableViewCell: UITableViewCell {
     @IBOutlet weak var lblhighTemp: UILabel!
     @IBOutlet weak var lbllowTemp: UILabel!
     @IBOutlet weak var imgIcon : UIImageView!
+    @IBOutlet weak var uvBackground:UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -35,8 +36,8 @@ class WeatherTableViewCell: UITableViewCell {
         
         
         let mvModel : MainViewModel =  MainViewModel()
-        self.lbllowTemp.text = mvModel.getTempFor(temp: model.temp.min) //"\(Int(model.temp.min)) ℉"
-        self.lblhighTemp.text = mvModel.getTempFor(temp: model.temp.max) //"\(Int(model.temp.max)) ℉"
+        self.lbllowTemp.text = mvModel.getTempFor(temp: model.temp.min)
+        self.lblhighTemp.text = mvModel.getTempFor(temp: model.temp.max)
         self.lblday.text = mvModel.getDayFor(timestamp: model.dt).uppercased()
         imgIcon.image = mvModel.getWeatherIconFor(icon: model.weather.count > 0 ? model.weather[0].icon : "sun.max.fill")
     }

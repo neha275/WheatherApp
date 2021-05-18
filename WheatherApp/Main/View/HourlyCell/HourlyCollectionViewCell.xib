@@ -4,43 +4,41 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.20000000000000001" contentMode="center" restorationIdentifier="HourlyCollectionViewCell" reuseIdentifier="HourlyCollectionViewCell" id="gTV-IL-0wX" customClass="HourlyCollectionViewCell" customModule="WheatherApp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="HourlyCollectionViewCell" reuseIdentifier="HourlyCollectionViewCell" id="gTV-IL-0wX" customClass="HourlyCollectionViewCell" customModule="WheatherApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="80" height="100"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                <rect key="frame" x="0.0" y="0.0" width="80" height="100"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Xs-ak-1KB">
-                        <rect key="frame" x="5" y="0.0" width="95" height="100"/>
+                        <rect key="frame" x="5" y="0.0" width="75" height="100"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BoG-B5-2CY" userLabel="time">
-                                <rect key="frame" x="5" y="5" width="85" height="18"/>
+                                <rect key="frame" x="5" y="5" width="65" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OJM-YY-dpe">
-                                <rect key="frame" x="35" y="31" width="25" height="25"/>
+                                <rect key="frame" x="25" y="31" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="T8X-0v-rRV"/>
                                     <constraint firstAttribute="width" constant="25" id="hSA-mj-FvJ"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zFr-ZS-DRY" userLabel="temp">
-                                <rect key="frame" x="5" y="63" width="85" height="32"/>
+                                <rect key="frame" x="5" y="63" width="65" height="32"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
                         <constraints>
                             <constraint firstItem="zFr-ZS-DRY" firstAttribute="leading" secondItem="4Xs-ak-1KB" secondAttribute="leading" constant="5" id="2Ea-fp-Lex"/>
                             <constraint firstItem="zFr-ZS-DRY" firstAttribute="top" secondItem="OJM-YY-dpe" secondAttribute="bottom" constant="7" id="4x9-zU-LCC"/>
@@ -56,7 +54,6 @@
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <color key="backgroundColor" systemColor="systemBlueColor"/>
             <constraints>
                 <constraint firstItem="4Xs-ak-1KB" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="ArF-ru-6x2"/>
                 <constraint firstAttribute="trailing" secondItem="4Xs-ak-1KB" secondAttribute="trailing" id="GYv-vC-F05"/>
@@ -72,12 +69,4 @@
             <point key="canvasLocation" x="-30.434782608695656" y="93.75"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemIndigoColor">
-            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-    </resources>
 </document>

@@ -42,13 +42,13 @@ class HourlyTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 100, height: 100)
+        return CGSize(width: 80, height: 100)
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HourlyCollectionViewCell.identifier, for: indexPath) as! HourlyCollectionViewCell
         cell.configure(with: models[indexPath.row])
-        //cell.backgroundColor = UIColor.clear
+        cell.backgroundColor = UIColor.clear
                 return cell
     }
     

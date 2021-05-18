@@ -20,9 +20,10 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setTableViewBackgroundGradient()
         activityLoader.isHidden = true
         table.isHidden = true
+        table.backgroundColor = UIColor.clear
         requestWeatherForLoaction()
         table.register(HourlyTableViewCell.nib(), forCellReuseIdentifier: HourlyTableViewCell.identifier)
         table.register(WeatherTableViewCell.nib(), forCellReuseIdentifier: WeatherTableViewCell.identifier)
@@ -71,19 +72,22 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         } else if indexPath.section == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: TodayForecastTableViewCell.identifier, for: indexPath) as! TodayForecastTableViewCell
-            cell.backgroundColor = UIColor.blue.withAlphaComponent(0.5)
+            //cell.backgroundColor = UIColor.blue.withAlphaComponent(0.5)
+            cell.backgroundColor = UIColor.clear
             cell.configure(mainViewModel: mvWeatherResponse)
             return cell
         }else if indexPath.section == 2 {
             let cell = tableView.dequeueReusableCell(withIdentifier: HourlyTableViewCell.identifier, for: indexPath) as! HourlyTableViewCell
-            cell.backgroundColor = UIColor.blue.withAlphaComponent(0.5)
+            //cell.backgroundColor = UIColor.blue.withAlphaComponent(0.5)
+            cell.backgroundColor = UIColor.clear
             cell.configure(with: mvWeatherResponse.weather.hourly)
             return cell
         }else {
             let cell = tableView.dequeueReusableCell(withIdentifier: WeatherTableViewCell.identifier, for: indexPath) as! WeatherTableViewCell
             let dailyWeather = mvWeatherResponse.weather.daily[indexPath.row]
             cell.configuare(to: dailyWeather)
-            cell.backgroundColor = UIColor.blue.withAlphaComponent(0.5)
+            //cell.backgroundColor = UIColor.blue.withAlphaComponent(0.5)
+            cell.backgroundColor = UIColor.clear
             return cell
         }
     }
@@ -95,7 +99,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         }else if indexPath.section == 1 {
             return 250
         }else if indexPath.section == 3 {
-            return 100
+            return 60
         }
         else {
             return 100
@@ -104,7 +108,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
     
     func setTableViewBackgroundGradient() {
-        let topColor:UIColor =  UIColor.blue
+        let topColor:UIColor =  UIColor.blue.withAlphaComponent(0.2)
         let bottomColor:UIColor =  UIColor.blue.withAlphaComponent(0.5)
         let gradientBackgroundColors = [topColor.cgColor, bottomColor.cgColor]
         let gradientLayer = CAGradientLayer()
@@ -116,7 +120,8 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         gradientLayer.frame = self.table.bounds
         let backgroundView = UIView(frame: table.bounds)
         backgroundView.layer.insertSublayer(gradientLayer, at: 0)
-        table.backgroundView = backgroundView
+        self.view.layer.insertSublayer(gradientLayer, at: 0)
+        //table.backgroundView = backgroundView
     }
 }
 //MARK: - Location
@@ -196,7 +201,7 @@ extension MainViewController: CLLocationManagerDelegate {
                     
                     self.table.isHidden = false
                     self.table.reloadData()
-                    self.setTableViewBackgroundGradient()
+                    //self.setTableViewBackgroundGradient()
                     self.activityLoader.isHidden = true
                 }
                 
