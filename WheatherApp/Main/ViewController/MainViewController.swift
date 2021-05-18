@@ -20,7 +20,7 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setTableViewBackgroundGradient()
+        setGradientView()
         activityLoader.isHidden = true
         table.isHidden = true
         table.backgroundColor = UIColor.clear
@@ -107,7 +107,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     
-    func setTableViewBackgroundGradient() {
+    func setGradientView() {
         let topColor:UIColor =  UIColor.blue.withAlphaComponent(0.2)
         let bottomColor:UIColor =  UIColor.blue.withAlphaComponent(0.5)
         let gradientBackgroundColors = [topColor.cgColor, bottomColor.cgColor]
@@ -117,8 +117,8 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         gradientLayer.startPoint = CGPoint(x: 0.5, y: 0)
         gradientLayer.endPoint = CGPoint(x: 0.5, y: 1)
         
-        gradientLayer.frame = self.table.bounds
-        let backgroundView = UIView(frame: table.bounds)
+        gradientLayer.frame = self.view.bounds
+        let backgroundView = UIView(frame: view.bounds)
         backgroundView.layer.insertSublayer(gradientLayer, at: 0)
         self.view.layer.insertSublayer(gradientLayer, at: 0)
         //table.backgroundView = backgroundView
@@ -198,7 +198,6 @@ extension MainViewController: CLLocationManagerDelegate {
         mvWeatherResponse.getWeatherFromLoaction(coordination: currentLoaction.coordinate, completionHandler: {status, error -> Void in
             if status {
                 DispatchQueue.main.async {
-                    
                     self.table.isHidden = false
                     self.table.reloadData()
                     //self.setTableViewBackgroundGradient()
@@ -206,7 +205,8 @@ extension MainViewController: CLLocationManagerDelegate {
                 }
                 
             }else {
-                print(error)
+                self.activityLoader.isHidden = true
+                Toast.showToast(controller: self, message: error.description)
             }
         })
         

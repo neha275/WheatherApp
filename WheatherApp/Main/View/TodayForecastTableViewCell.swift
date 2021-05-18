@@ -20,7 +20,7 @@ class TodayForecastTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        //roundedCorner()
+        roundedCorner()
 
         
     }
@@ -34,14 +34,11 @@ class TodayForecastTableViewCell: UITableViewCell {
         uvBackground.layer.masksToBounds = false
         uvBackground.layer.borderWidth = 1.0
         uvBackground.layer.borderColor = UIColor.white.cgColor
-        uvBackground.backgroundColor = UIColor.red.withAlphaComponent(0.2)
-//        let gradientLayer = CAGradientLayer()
-//        gradientLayer.colors = [UIColor.blue.withAlphaComponent(0.5), UIColor.blue]
-//        gradientLayer.startPoint = CGPoint(x: 0.5, y: 0)
-//        gradientLayer.endPoint = CGPoint(x: 0.5, y: 1)
-//        gradientLayer.locations =  [0.0,1.0]
-//        gradientLayer.frame = uvBackground.bounds
-//        uvBackground.layer.insertSublayer(gradientLayer, at: 0)
+        uvBackground.layer.shadowOffset = CGSize(width: 0,height: 0)
+        uvBackground.layer.shadowOpacity = 0.8
+        uvBackground.layer.shadowColor = UIColor.blue.cgColor
+
+       // uvBackground.backgroundColor = UIColor.red.withAlphaComponent(0.2)
     }
     
     func configure(mainViewModel: MainViewModel) {

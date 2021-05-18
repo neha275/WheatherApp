@@ -10,6 +10,11 @@ import Foundation
 final class NetworkManager<T: Codable>{
     
     static func fetch(for url: URL, completion: @escaping (Result<T, NetworkError>) -> Void) {
+        let objReach:Reachability = Reachability()
+        if objReach.isConnectedToNetwork() == false {
+            completion(.failure(.noInternetconnection(err: "No Internet Connection")))
+            return
+        }
         URLSession.shared.dataTask(with: url) { (data,response, error) in
             guard error == nil else {
                 print(String(describing: error))
@@ -45,4 +50,5 @@ enum NetworkError: Error{
     case invalidData
     case error(err: String)
     case DecoadingError(err: String)
+    case noInternetconnection(err: String)
 }

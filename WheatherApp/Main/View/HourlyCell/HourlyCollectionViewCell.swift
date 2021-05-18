@@ -41,6 +41,9 @@ class HourlyCollectionViewCell: UICollectionViewCell {
         uvBackground.layer.borderColor = UIColor.white.cgColor
         //uvBackground.backgroundColor = UIColor.blue.withAlphaComponent(0.2)
         uvBackground.backgroundColor = UIColor.clear
+        uvBackground.layer.shadowOffset = CGSize(width: 0,height: 0)
+        uvBackground.layer.shadowOpacity = 0.8
+        uvBackground.layer.shadowColor = UIColor.blue.cgColor
         
     }
 

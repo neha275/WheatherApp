@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE26F26526543EE0002E5ECC /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE26F26426543EDF002E5ECC /* Reachability.swift */; };
+		BE26F26926544378002E5ECC /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE26F26826544378002E5ECC /* Toast.swift */; };
 		BE4AC57726429A3700850E58 /* WeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4AC57526429A3700850E58 /* WeatherTableViewCell.swift */; };
 		BE4AC57826429A3700850E58 /* WeatherTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE4AC57626429A3700850E58 /* WeatherTableViewCell.xib */; };
 		BE4AC57F26429AB600850E58 /* HourlyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4AC57D26429AB600850E58 /* HourlyCollectionViewCell.swift */; };
@@ -52,6 +54,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BE26F26426543EDF002E5ECC /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		BE26F26826544378002E5ECC /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		BE4AC57526429A3700850E58 /* WeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTableViewCell.swift; sourceTree = "<group>"; };
 		BE4AC57626429A3700850E58 /* WeatherTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherTableViewCell.xib; sourceTree = "<group>"; };
 		BE4AC57D26429AB600850E58 /* HourlyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -127,6 +131,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE26F2672654435C002E5ECC /* Utlity */ = {
+			isa = PBXGroup;
+			children = (
+				BE26F26826544378002E5ECC /* Toast.swift */,
+			);
+			path = Utlity;
+			sourceTree = "<group>";
+		};
 		BE4AC573264299E000850E58 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,6 +221,7 @@
 				BE68AC74264333B800B09101 /* NetworkManager.swift */,
 				BE94FCDC26446E1F00988CCF /* API.swift */,
 				BE94FCE226446E8700988CCF /* API+Extension.swift */,
+				BE26F26426543EDF002E5ECC /* Reachability.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -286,6 +299,7 @@
 		BEF2093C263F3E3300F1E757 /* WheatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				BE26F2672654435C002E5ECC /* Utlity */,
 				BEBE0ECA264957BB0099BD96 /* GooglePlace */,
 				BE94FCE026446E5600988CCF /* Networking */,
 				BE53B5DF263F44DD0008BC73 /* Storyboard */,
@@ -382,6 +396,7 @@
 				BE4AC57726429A3700850E58 /* WeatherTableViewCell.swift in Sources */,
 				BE94FCEC26447D0F00988CCF /* WeatherResponse.swift in Sources */,
 				BE53B5DC263F43470008BC73 /* MainViewController.swift in Sources */,
+				BE26F26926544378002E5ECC /* Toast.swift in Sources */,
 				BEF2093E263F3E3300F1E757 /* AppDelegate.swift in Sources */,
 				BE94FCF526447E0C00988CCF /* DailyWeather.swift in Sources */,
 				BEB5ED70264D0D2400711B24 /* HourlyTableViewCell.swift in Sources */,
@@ -393,6 +408,7 @@
 				BE94FCDD26446E1F00988CCF /* API.swift in Sources */,
 				BE94FCF226447DFD00988CCF /* WeatherDetail.swift in Sources */,
 				BE88A82F264C024A00F9F79B /* TodayForecastTableViewCell.swift in Sources */,
+				BE26F26526543EE0002E5ECC /* Reachability.swift in Sources */,
 				BE4AC57F26429AB600850E58 /* HourlyCollectionViewCell.swift in Sources */,
 				BE94FCF826447E3900988CCF /* Temperature.swift in Sources */,
 				BE94FCEF26447DB400988CCF /* MainViewModel.swift in Sources */,
