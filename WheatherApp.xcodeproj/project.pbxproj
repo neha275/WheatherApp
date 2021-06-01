@@ -27,8 +27,6 @@
 		BE94FCF826447E3900988CCF /* Temperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE94FCF726447E3900988CCF /* Temperature.swift */; };
 		BEB5ED70264D0D2400711B24 /* HourlyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB5ED6E264D0D2400711B24 /* HourlyTableViewCell.swift */; };
 		BEB5ED71264D0D2400711B24 /* HourlyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEB5ED6F264D0D2400711B24 /* HourlyTableViewCell.xib */; };
-		BEBE0ECD264957E20099BD96 /* GooglePlaces in Frameworks */ = {isa = PBXBuildFile; fileRef = BEBE0ECC264957E10099BD96 /* GooglePlaces */; };
-		BEBE0ED0264957FC0099BD96 /* GoogleMapsBase in Frameworks */ = {isa = PBXBuildFile; fileRef = BEBE0ECF264957FC0099BD96 /* GoogleMapsBase */; };
 		BEBE0ED526495C3B0099BD96 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEBE0ED426495C3B0099BD96 /* Accelerate.framework */; };
 		BEBE0ED726495C460099BD96 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEBE0ED626495C460099BD96 /* CoreData.framework */; };
 		BEBE0ED926495C690099BD96 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEBE0ED826495C690099BD96 /* CoreGraphics.framework */; };
@@ -45,7 +43,6 @@
 		BEBE0EEF26495CFB0099BD96 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEBE0EEE26495CFB0099BD96 /* SystemConfiguration.framework */; };
 		BEBE0EF126495D010099BD96 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEBE0EF026495D010099BD96 /* UIKit.framework */; };
 		BEDCD410264A707D00922681 /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEDCD40F264A707D00922681 /* MetalKit.framework */; };
-		BEDCD423264A752F00922681 /* GooglePlaces.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BEDCD422264A752F00922681 /* GooglePlaces.bundle */; };
 		BEF2093E263F3E3300F1E757 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF2093D263F3E3300F1E757 /* AppDelegate.swift */; };
 		BEF20940263F3E3300F1E757 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF2093F263F3E3300F1E757 /* SceneDelegate.swift */; };
 		BEF20945263F3E3300F1E757 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEF20943263F3E3300F1E757 /* Main.storyboard */; };
@@ -74,8 +71,6 @@
 		BE94FCF726447E3900988CCF /* Temperature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temperature.swift; sourceTree = "<group>"; };
 		BEB5ED6E264D0D2400711B24 /* HourlyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyTableViewCell.swift; sourceTree = "<group>"; };
 		BEB5ED6F264D0D2400711B24 /* HourlyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HourlyTableViewCell.xib; sourceTree = "<group>"; };
-		BEBE0ECC264957E10099BD96 /* GooglePlaces */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = GooglePlaces; sourceTree = "<group>"; };
-		BEBE0ECF264957FC0099BD96 /* GoogleMapsBase */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = GoogleMapsBase; sourceTree = "<group>"; };
 		BEBE0ED426495C3B0099BD96 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		BEBE0ED626495C460099BD96 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		BEBE0ED826495C690099BD96 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -92,7 +87,6 @@
 		BEBE0EEE26495CFB0099BD96 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		BEBE0EF026495D010099BD96 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BEDCD40F264A707D00922681 /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
-		BEDCD422264A752F00922681 /* GooglePlaces.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GooglePlaces.bundle; sourceTree = "<group>"; };
 		BEF2093A263F3E3300F1E757 /* WheatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WheatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEF2093D263F3E3300F1E757 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEF2093F263F3E3300F1E757 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -123,8 +117,6 @@
 				BEBE0ED926495C690099BD96 /* CoreGraphics.framework in Frameworks */,
 				BEBE0ED726495C460099BD96 /* CoreData.framework in Frameworks */,
 				BEBE0ED526495C3B0099BD96 /* Accelerate.framework in Frameworks */,
-				BEBE0ECD264957E20099BD96 /* GooglePlaces in Frameworks */,
-				BEBE0ED0264957FC0099BD96 /* GoogleMapsBase in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,6 +207,21 @@
 			name = Storyboard;
 			sourceTree = "<group>";
 		};
+		BE94A58B26662256000466C6 /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				BE94A58C26662269000466C6 /* GooglePlace */,
+			);
+			path = Framework;
+			sourceTree = "<group>";
+		};
+		BE94A58C26662269000466C6 /* GooglePlace */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GooglePlace;
+			sourceTree = "<group>";
+		};
 		BE94FCE026446E5600988CCF /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -236,24 +243,6 @@
 				BE94FCF726447E3900988CCF /* Temperature.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		BEBE0ECA264957BB0099BD96 /* GooglePlace */ = {
-			isa = PBXGroup;
-			children = (
-				BEBE0ECB264957C80099BD96 /* Framework */,
-			);
-			path = GooglePlace;
-			sourceTree = "<group>";
-		};
-		BEBE0ECB264957C80099BD96 /* Framework */ = {
-			isa = PBXGroup;
-			children = (
-				BEDCD422264A752F00922681 /* GooglePlaces.bundle */,
-				BEBE0ECF264957FC0099BD96 /* GoogleMapsBase */,
-				BEBE0ECC264957E10099BD96 /* GooglePlaces */,
-			);
-			path = Framework;
 			sourceTree = "<group>";
 		};
 		BEBE0ED326495C3A0099BD96 /* Frameworks */ = {
@@ -299,8 +288,8 @@
 		BEF2093C263F3E3300F1E757 /* WheatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				BE94A58B26662256000466C6 /* Framework */,
 				BE26F2672654435C002E5ECC /* Utlity */,
-				BEBE0ECA264957BB0099BD96 /* GooglePlace */,
 				BE94FCE026446E5600988CCF /* Networking */,
 				BE53B5DF263F44DD0008BC73 /* Storyboard */,
 				BE53B5D9263F42CD0008BC73 /* Main */,
@@ -380,7 +369,6 @@
 				BEF2094A263F3E3E00F1E757 /* LaunchScreen.storyboard in Resources */,
 				BEF20947263F3E3E00F1E757 /* Assets.xcassets in Resources */,
 				BEF20945263F3E3300F1E757 /* Main.storyboard in Resources */,
-				BEDCD423264A752F00922681 /* GooglePlaces.bundle in Resources */,
 				BEB5ED71264D0D2400711B24 /* HourlyTableViewCell.xib in Resources */,
 				BE4AC58026429AB600850E58 /* HourlyCollectionViewCell.xib in Resources */,
 			);
