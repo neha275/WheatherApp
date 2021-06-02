@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreLocation
+import GooglePlaces
 
 class MainViewController: UIViewController {
 
@@ -18,9 +19,15 @@ class MainViewController: UIViewController {
     let locationManager = CLLocationManager()
     var currentLoaction:CLLocation?
     
+    //Google Place API
+    var resultsViewController: GMSAutocompleteResultsViewController?
+    var searchController: UISearchController?
+    var resultView: UITextView?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setGradientView()
+        searchBar.delegate = self
         activityLoader.isHidden = true
         table.isHidden = true
         table.backgroundColor = UIColor.clear
@@ -213,54 +220,58 @@ extension MainViewController: CLLocationManagerDelegate {
         
     }
 }
-/*
-//MArk: - Google Place Api
-extension MainViewController : UISearchBarDelegate, GMSAutocompleteResultsViewControllerDelegate {
+
+//Mark: - Google Place Api
+extension MainViewController : UISearchBarDelegate, GMSAutocompleteViewControllerDelegate {
     
-    var resultsViewController: GMSAutocompleteResultsViewController?
-    var searchController: UISearchController?
-    var resultView: UITextView?
+    
     
     func setUpPlaceApi() {
-        resultsViewController = GMSAutocompleteResultsViewController()
-        resultsViewController?.delegate = self
+        let autocompleteController = GMSAutocompleteViewController()
+        autocompleteController.delegate = self
+        
+        // Specify the place data types to return.
+        let fields: GMSPlaceField = GMSPlaceField(rawValue: UInt(GMSPlaceField.name.rawValue) |
+                                                        UInt(GMSPlaceField.placeID.rawValue))
+        autocompleteController.placeFields = fields
 
-        searchController = UISearchController(searchResultsController: resultsViewController)
-        searchController?.searchResultsUpdater = resultsViewController
+        // Specify a filter.
+        let filter = GMSAutocompleteFilter()
+        filter.type = .city
+        autocompleteController.autocompleteFilter = filter
 
-        // Put the search bar in the navigation bar.
-        searchController?.searchBar.sizeToFit()
-        navigationItem.titleView = searchController?.searchBar
-
-        // When UISearchController presents the results view, present it in
-        // this view controller, not one further up the chain.
-        definesPresentationContext = true
-
-        // Prevent the navigation bar from being hidden when searching.
-        searchController?.hidesNavigationBarDuringPresentation = false
+        // Display the autocomplete view controller.
+        present(autocompleteController, animated: true, completion: nil)
     }
     
-    func resultsController(_ resultsController: GMSAutocompleteResultsViewController,
-                             didAutocompleteWith place: GMSPlace) {
-        searchController?.isActive = false
-        // Do something with the selected place.
-        print("Place name: \(place.name)")
-        print("Place address: \(place.formattedAddress)")
-        print("Place attributions: \(place.attributions)")
-      }
+    // Handle the user's selection.
+    func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
+        print("Place name: \(String(describing: place.name))")
+        print("Place ID: \(String(describing: place.placeID))")
+        print("Place attributions: \(String(describing: place.attributions))")
+        dismiss(animated: true, completion: nil)
+    }
 
-      func resultsController(_ resultsController: GMSAutocompleteResultsViewController,
-                             didFailAutocompleteWithError error: Error){
+    func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
         // TODO: handle the error.
         print("Error: ", error.localizedDescription)
-      }
+    }
 
-      // Turn the network activity indicator on and off again.
-      func didRequestAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
-      }
+    // User canceled the operation.
+    func wasCancelled(_ viewController: GMSAutocompleteViewController) {
+        dismiss(animated: true, completion: nil)
+    }
 
-      func didUpdateAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
-        UIApplication.shared.isNetworkActivityIndicatorVisible = false
-      }
-}*/
+    // Turn the network activity indicator on and off again.
+    func didRequestAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
+        activityLoader.isHidden = true
+    }
+
+    func didUpdateAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
+        activityLoader.isHidden = false
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        setUpPlaceApi()
+    }
+}
